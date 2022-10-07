@@ -24,11 +24,11 @@ class EmptyResponseModel extends Models<EmptyResponseModel> {
   }
 }
 
-class Response {
+/* class Response {
   Response.fromJson(Map<String, dynamic> json);
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     return data;
   }
-}
+} */

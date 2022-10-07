@@ -18,6 +18,8 @@ class ApiClient extends GetxService {
     dioInstance = dio.Dio(options)..interceptors.add(alice.getDioInterceptor());
   }
 
+  dio.Dio get client => dio.Dio();
+
   Future<Either<EmptyResponseModel, T?>> get<T extends Models<dynamic>, R>(
       String path, T obj,
       {bool isAuthorised = true, bool noBodyRequired = false}) async {

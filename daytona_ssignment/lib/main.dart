@@ -1,4 +1,4 @@
-import 'package:daytona_ssignment/app.dart';
+import 'package:daytona_ssignment/app/app.dart';
 import 'package:flutter/material.dart';
 
 void main() {

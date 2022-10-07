@@ -1,3 +1,5 @@
+import 'package:daytona_ssignment/app/app_bindings.dart';
+import 'package:daytona_ssignment/app/app_page.dart';
 import 'package:daytona_ssignment/feature/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,7 +24,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      initialBinding: AppBindings(),
+      getPages: GetPages.getPages,
+      initialRoute: RouteName.home,
     );
   }
 }

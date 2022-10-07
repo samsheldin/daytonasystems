@@ -40,6 +40,13 @@ class HomePage extends StatelessWidget {
                     onPressed: () => _.fetchData(), child: const Text("Retry"));
               }
               if (_.isLoaded) {
+                if (_.countries.isEmpty) {
+                  return Text(
+                    "No Countries found",
+                    style: Get.textTheme.bodyLarge
+                        ?.copyWith(fontWeight: FontWeight.normal),
+                  );
+                }
                 String currentAlphabet = "";
                 String previousAlphabet = "";
                 return ListView.builder(

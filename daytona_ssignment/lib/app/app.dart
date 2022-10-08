@@ -1,6 +1,5 @@
 import 'package:daytona_ssignment/app/app_bindings.dart';
 import 'package:daytona_ssignment/app/app_page.dart';
-import 'package:daytona_ssignment/feature/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blue,visualDensity: VisualDensity.adaptivePlatformDensity
       ),
       initialBinding: AppBindings(),
       getPages: GetPages.getPages,

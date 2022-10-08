@@ -1,8 +1,7 @@
+import 'package:daytona_ssignment/app/app_page.dart';
 import 'package:daytona_ssignment/feature/home_page/home_controller.dart';
 import 'package:daytona_ssignment/widgets/image_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
@@ -63,34 +62,46 @@ class HomePage extends StatelessWidget {
                     String key = _.flagKeys.keys.firstWhere(
                         (k) => _.flagKeys[k] == _.countries[index],
                         orElse: () => "");
+                    String imageUrl = "https://flagcdn.com/h40/$key.png";
                     return Column(
                       children: [
                         if (currentAlphabet != previousAlphabet)
                           Container(
-                              padding: EdgeInsets.all(15),
+                              padding:
+                                  const EdgeInsets.fromLTRB(40, 15, 15, 15),
                               alignment: Alignment.centerLeft,
                               child: Text(currentAlphabet,
                                   style: Get.textTheme.bodyLarge)),
-                        Container(
-                          color: Colors.white,
-                          child: Column(children: [
-                            Row(
-                              children: [
-                                CustomNetworkImage(
-                                  "https://flagcdn.com/h40/$key.png",
-                                  height: 15,
-                                  width: 20,
-                                ),
-                                const SizedBox(width: 15),
-                                Text(
-                                  _.countries[index],
-                                  style: Get.textTheme.bodyLarge
-                                      ?.copyWith(fontWeight: FontWeight.normal),
-                                ),
-                              ],
-                            ).paddingAll(10),
-                            const Divider(height: 1)
-                          ]),
+                        InkWell(
+                          onTap: () => Get.toNamed(
+                            RouteName.countryDetails,
+                            parameters: {
+                              "country": _.countries[index],
+                              "imageUrl": imageUrl
+                            },
+                          ),
+                          child: Container(
+                            color: Colors.white,
+                            child: Column(children: [
+                              Row(
+                                children: [
+                                  const SizedBox(width: 30),
+                                  CustomNetworkImage(
+                                    imageUrl,
+                                    height: 15,
+                                    width: 20,
+                                  ),
+                                  const SizedBox(width: 15),
+                                  Text(
+                                    _.countries[index],
+                                    style: Get.textTheme.bodyLarge?.copyWith(
+                                        fontWeight: FontWeight.normal),
+                                  ),
+                                ],
+                              ).paddingAll(10),
+                              const Divider(height: 1)
+                            ]),
+                          ),
                         ),
                       ],
                     );

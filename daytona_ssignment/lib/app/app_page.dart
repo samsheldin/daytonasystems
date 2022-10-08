@@ -1,3 +1,5 @@
+import 'package:daytona_ssignment/feature/details_page/details_binding.dart';
+import 'package:daytona_ssignment/feature/details_page/details_page.dart';
 import 'package:daytona_ssignment/feature/home_page/home_bindings.dart';
 import 'package:daytona_ssignment/feature/home_page/home_page.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
@@ -12,6 +14,10 @@ abstract class GetPages {
         GetPage(
             name: RouteName.home,
             page: () => const HomePage(),
-            binding: HomeBindings())
+            binding: HomeBindings()),
+        GetPage(
+            name: RouteName.countryDetails,
+            page: () => const DetailsPage(),
+            binding: DetailsBinding()),
       ];
 }

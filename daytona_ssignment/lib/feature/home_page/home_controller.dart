@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'data/models/countries_model.dart';
 
 class HomeController extends GetxController {
-  HomeRepo _homeRepo;
+  final HomeRepo _homeRepo;
   HomeController(this._homeRepo);
   bool isLoading = false;
   bool isLoaded = false;
